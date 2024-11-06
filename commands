@@ -7,3 +7,26 @@ kraken2-build --add-to-library seq14.fasta --db k2_pluspfp_20240904
 
 #building database
 kraken2-build --build k2_pluspfp_20240904
+
+#checking sequence classification
+ kraken2 --use-names --threads 4 --db k2_pluspfp_20240904 --fastq-input --report Altus --paired /mnt/d/F23A430001979_PLAheanR/soapnuke/clean/Altus.unmapped.R1.fastq.gz /mnt/d/F23A430001979_PLAheanR/soapnuke/clean/Altus.unmapped.R2.fastq.gz >
+Altus.kraken
+
+#krona for visualization
+#install krona
+https://github.com/marbl/Krona/wiki/Installing
+./install.pl
+
+then
+./updateTaxonomy.sh
+
+then 
+./updateTaxonomy.sh
+
+cat Altus.kraken | cut -f 2,3 > Altus.kraken.krona
+
+ ktImportTaxonomy Altus.kraken.krona
+
+
+
+

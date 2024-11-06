@@ -1,4 +1,9 @@
 #commands
+#downloading the database
+see here: https://benlangmead.github.io/aws-indexes/k2
+
+#adding genomes to the database
+kraken2-build --add-to-library seq14.fasta --db k2_pluspfp_20240904
 
 #building database
 kraken2-build --build k2_pluspfp_20240904

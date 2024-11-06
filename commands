@@ -1,0 +1,4 @@
+#commands
+
+#building database
+kraken2-build --build k2_pluspfp_20240904
